@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <TabPane maxHeight="720.0" maxWidth="1280.0" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="180.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HuffmanController">
   <tabs>
     <Tab text="Compress">
@@ -31,7 +30,7 @@
                       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="177.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="1">
+                        <TextArea fx:id="originalText" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="40.0" />
                            </GridPane.margin>
@@ -47,12 +46,12 @@
                               <Insets left="40.0" top="30.0" />
                            </GridPane.margin>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#onSelectTextFile" prefHeight="38.0" prefWidth="122.0" text="Select File" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                        <Button fx:id="selectTextFileButton" mnemonicParsing="false" onAction="#onSelectTextFile" prefHeight="38.0" prefWidth="122.0" text="Select File" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onCompress" prefHeight="39.0" prefWidth="201.0" text="Compress and Save" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                        <Button fx:id="compressButton" mnemonicParsing="false" onAction="#onCompress" prefHeight="39.0" prefWidth="201.0" text="Compress and Save" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -79,7 +78,7 @@
                         <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="2">
+                        <TextArea fx:id="decompressedText" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="40.0" />
                            </GridPane.margin>
@@ -87,26 +86,26 @@
                               <Font size="16.0" />
                            </font>
                         </TextArea>
-                        <Button mnemonicParsing="false" onAction="#onSaveText" prefHeight="38.0" prefWidth="122.0" text="Save Text" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                        <Button fx:id="saveDecompressedTextButton" mnemonicParsing="false" onAction="#onSaveText" prefHeight="38.0" prefWidth="122.0" text="Save Text" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" GridPane.halignment="CENTER">
                            <children>
-                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSelectBinFile" prefHeight="38.0" prefWidth="122.0" text="Select File" textAlignment="CENTER">
+                              <Button fx:id="selectBinaryFileButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSelectBinFile" prefHeight="38.0" prefWidth="122.0" text="Select File" textAlignment="CENTER">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Button>
-                              <Label text="aaaaaa" textAlignment="CENTER">
+                              <Label fx:id="openedFileLabel" textAlignment="CENTER">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" onAction="#onDecompress" prefHeight="38.0" prefWidth="131.0" text="Decompress" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                        <Button fx:id="decompressButton" mnemonicParsing="false" onAction="#onDecompress" prefHeight="38.0" prefWidth="131.0" text="Decompress" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                            <font>
                               <Font size="18.0" />
                            </font>
