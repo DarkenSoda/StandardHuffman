@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -40,6 +39,10 @@ public class HuffmanController {
     // #region FXML Buttons Action
     @FXML
     void onCompress(ActionEvent event) {
+        if(originalText.getText() == null || originalText.getText().length() == 0){
+        
+            return;
+        }
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter textFilter = new FileChooser.ExtensionFilter("Binary Files", "*.bin");
         fileChooser.getExtensionFilters().add(textFilter);
